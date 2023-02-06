@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+ <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+  
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align : center
+}
+.main{
+  display : flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column
+}
+h1{
+  margin : 3%;
+}
+h2{
+  margin:2%;
+  width: 100%%
+}
+.gossip{
+  width:100%;
+  display : flex;
+  justify-content:space-evenly;
+  align-items : center;
+  padding : 15px;
+}
+.main_head{
+  display: flex;
+  justify-content:space-between;
+  align-items : center;
+}
+  </style>
+  <body>
+  <div class="main">
+    <div class="main_head">
+    <h1>Bienvenue sur Gossip THP </h1>
+    <a href='./gossips'><h2>Créer ton gossip</h2></a>
+    </div>
+    <% all_gossips.each_with_index do |gossip,index|%>
+    <div class="gossip">
+    <h3><%= gossip.author%></h3><br/>
+    <h4><%= gossip.content%></h4>
+    <a href='gossips/<%=index%>'>voir le gossip></a>
+    </div>
+    <% end %>
+    </div>
+  </body>
+</html>

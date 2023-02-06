@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+   <style>
+     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align : center
+}
+.main{
+  display : flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column
+}
+h1{
+  margin : 3%;
+}
+h2{
+  margin:2%;
+  width: 100%%
+}
+.gossip{
+  width:100%;
+  display : flex;
+  justify-content:space-around;
+}
+  </style>
+  <body>
+    <div class="main">
+    
+    <h3>Voici le gossip </h3> 
+    <h1>
+    <%=show_gossips.author%>
+    </h1>
+    <h2>
+    <%=show_gossips.content%>
+    </h2>
+    <h5>
+    <a href="/gossips/<%=params['id']%>/edit">
+    clique ici pour éditer
+    </a>
+    </h5>
+    </div>
+  </body>
+</html>
